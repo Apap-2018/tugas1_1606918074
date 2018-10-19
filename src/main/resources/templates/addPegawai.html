@@ -8,7 +8,6 @@
 	<body>
 		<nav th:replace="fragments/fragment :: navbar">
 		</nav>
-		<header th:replace="fragments/fragment :: header('Tambah Pegawai')"></header>
 		<h3>Tambah Pegawai</h3>
 		<form th:action="@{/pegawai/tambah}" th:object="${pegawaiCmd}" method="POST">
 			<table>
