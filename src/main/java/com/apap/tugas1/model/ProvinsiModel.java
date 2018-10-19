@@ -24,15 +24,38 @@ public class ProvinsiModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Size(max=10)
 	@Column(name="id", nullable=false)
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "instansi")
-    private int id;
+	private int id;
 	
 	@NotBlank
 	@Size(max=255)
 	@Column(name="nama", nullable=false)
-    private String nama;
-	
+    public String nama;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNama() {
+		return nama;
+	}
+
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+
+	public double getPresentase_tunjangan() {
+		return presentase_tunjangan;
+	}
+
+	public void setPresentase_tunjangan(double presentase_tunjangan) {
+		this.presentase_tunjangan = presentase_tunjangan;
+	}
+
 	@NotBlank
 	@Column(name="presentase_tunjangan", nullable=false)
-    private double presentase_tunjangan;
+    public double presentase_tunjangan;
 }

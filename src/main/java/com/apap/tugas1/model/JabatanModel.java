@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -20,10 +21,41 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 @Table(name="jabatan")
 public class JabatanModel implements Serializable{
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNama() {
+		return nama;
+	}
+
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+
+	public String getDeskripsi() {
+		return deskripsi;
+	}
+
+	public void setDeskripsi(String deskripsi) {
+		this.deskripsi = deskripsi;
+	}
+
+	public Long getGaji_pokok() {
+		return gaji_pokok;
+	}
+
+	public void setGaji_pokok(Long gaji_pokok) {
+		this.gaji_pokok = gaji_pokok;
+	}
+
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Size(max=20)
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "jabatan_pegawai")
 	@Column(name="id", nullable=false)
     private Long id;
 	
@@ -37,8 +69,8 @@ public class JabatanModel implements Serializable{
 	@Column(name="deskripsi", nullable=false)
     private String deskripsi;
 	
-	@NotBlank
+	@NotNull
 	@Column(name="gaji_pokok", nullable=false)
-    private double gaji_pokok;
+    private Long gaji_pokok;
 
 }

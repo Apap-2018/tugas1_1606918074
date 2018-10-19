@@ -2,6 +2,7 @@ package com.apap.tugas1.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -25,39 +27,102 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class PegawaiModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Size(max=20)
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "jabatan_pegawai")
-	@Column(name="id", nullable=false)
-    private Long id;
+    @Column(name="id", nullable=false)
+    public Long id;
 
     @NotBlank
     @Size(max=255)
-	@Column(name="NIP", nullable=false, unique=true)
-    private String nip;
+	@Column(name="nip", nullable=false, unique=true)
+    public String nip;
 
     @NotBlank
     @Size(max=255)
 	@Column(name="nama", nullable=false)
-    private String nama;
+    public String nama;
 
     @NotBlank
     @Size(max=255)
 	@Column(name="tempat_lahir", nullable=false)
-    private String tempat_lahir;
+    public String tempat_lahir;
 
-    @NotBlank
-	@Column(name="tempat_lahir", nullable=false)
-    private Date tanggal_lahir;
+    @NotNull
+	@Column(name="tanggal_lahir", nullable=false)
+    public Date tanggal_lahir;
 
     @NotBlank
     @Size(max=255)
 	@Column(name="tahun_masuk", nullable=false)
-    private String tahun_masuk;
+    public String tahun_masuk;
 
-    @NotBlank
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="id")
-    @Size(max=20)
-	@Column(name="id_instansi", nullable=false)
-    private long id_instansi;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNip() {
+        return nip;
+    }
+
+    public void setNip(String nip) {
+        this.nip = nip;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getTempat_lahir() {
+        return tempat_lahir;
+    }
+
+    public void setTempat_lahir(String tempat_lahir) {
+        this.tempat_lahir = tempat_lahir;
+    }
+
+    public Date getTanggal_lahir() {
+        return tanggal_lahir;
+    }
+
+    public void setTanggal_lahir(Date tanggal_lahir) {
+        this.tanggal_lahir = tanggal_lahir;
+    }
+
+    public String getTahun_masuk() {
+        return tahun_masuk;
+    }
+
+    public void setTahun_masuk(String tahun_masuk) {
+        this.tahun_masuk = tahun_masuk;
+    }
+
+    public Long getId_instansi() {
+        return id_instansi;
+    }
+
+    public void setId_instansi(Long id_instansi) {
+        this.id_instansi = id_instansi;
+    }
+
+    @NotNull(message = "please insert id")
+    public Long id_instansi;
+
+//    @OneToMany(mappedBy = "pegawai")
+//    public List<JabatanPegawaiModel> jabatanList;
+
+    public String jabatanfull;
+
+    public String getJabatanfull() {
+        return jabatanfull;
+    }
+
+    public void setJabatanfull(String jabatanfull) {
+        this.jabatanfull = jabatanfull;
+    }
 }

@@ -9,7 +9,7 @@ import com.apap.tugas1.service.JabatanService;
 public class JabatanController {
 	
 	@Autowired //bikin berapapun autowirednya sesuai kebutuhan fitur
-	private JabatanService jabatansService;
+	private JabatanService jabatanService;
 	
 	
 }
