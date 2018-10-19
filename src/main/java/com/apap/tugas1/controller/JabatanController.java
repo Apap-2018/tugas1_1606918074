@@ -22,10 +22,7 @@ public class JabatanController {
 	public String view(Model model) {
 		List<JabatanModel> jabatan = jabatanService.getJabatan();
 		
-		model.addAllAttributes(jabatan);
-		for (JabatanModel jbt : jabatan) {
-			System.out.println(jbt.getNama());
-		}
+		model.addAttribute("allJabatan", jabatan);
 		return "view-all-jabatan";
 	}
 }
