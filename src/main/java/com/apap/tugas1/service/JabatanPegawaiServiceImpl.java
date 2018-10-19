@@ -20,6 +20,11 @@ public class JabatanPegawaiServiceImpl implements JabatanPegawaiService{
     JabatanDb jabatanDb;
 
     @Override
+    public void addJabatanPegawai(JabatanPegawaiModel jabatanPegawaiModel) {
+        jabatanPegawaiDb.save(jabatanPegawaiModel);
+    }
+    
+    @Override
     @Transactional(readOnly = false)
     public List<JabatanPegawaiModel> getJabatanPegawaiListByIdPegawai(Long idPegawai) {
         List<JabatanPegawaiModel> jabatanPegawaiModels = jabatanPegawaiDb.findJabatanPegawaiModelsById_pegawai(idPegawai);

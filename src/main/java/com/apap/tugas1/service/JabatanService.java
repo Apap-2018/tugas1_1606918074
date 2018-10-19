@@ -10,5 +10,5 @@ import com.apap.tugas1.model.JabatanModel;
 @Service
 @Transactional
 public interface JabatanService {
-	List<JabatanModel> getJabatan();
+	List<JabatanModel> getAllJabatan();
 }

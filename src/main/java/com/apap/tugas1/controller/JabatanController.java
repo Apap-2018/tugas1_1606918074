@@ -20,9 +20,12 @@ public class JabatanController {
 	
 	@RequestMapping(value="/jabatan/viewall", method=RequestMethod.GET)
 	public String view(Model model) {
-		List<JabatanModel> jabatan = jabatanService.getJabatan();
+		List<JabatanModel> jabatan = jabatanService.getAllJabatan();
 		
 		model.addAttribute("allJabatan", jabatan);
 		return "view-all-jabatan";
 	}
+	
+	
+	
 }

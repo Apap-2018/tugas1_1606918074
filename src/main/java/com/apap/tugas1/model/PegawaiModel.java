@@ -2,24 +2,20 @@ package com.apap.tugas1.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
@@ -47,12 +43,21 @@ public class PegawaiModel implements Serializable {
 
     @NotNull
 	@Column(name="tanggal_lahir", nullable=false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     public Date tanggal_lahir;
 
     @NotBlank
     @Size(max=255)
 	@Column(name="tahun_masuk", nullable=false)
     public String tahun_masuk;
+
+    @NotNull(message = "please insert id")
+    public Long id_instansi;
+
+//    @OneToMany(mappedBy = "pegawai")
+//    public List<JabatanPegawaiModel> jabatanList;
+
+    public String jabatanfull;
 
     public Long getId() {
         return id;
@@ -109,14 +114,6 @@ public class PegawaiModel implements Serializable {
     public void setId_instansi(Long id_instansi) {
         this.id_instansi = id_instansi;
     }
-
-    @NotNull(message = "please insert id")
-    public Long id_instansi;
-
-//    @OneToMany(mappedBy = "pegawai")
-//    public List<JabatanPegawaiModel> jabatanList;
-
-    public String jabatanfull;
 
     public String getJabatanfull() {
         return jabatanfull;

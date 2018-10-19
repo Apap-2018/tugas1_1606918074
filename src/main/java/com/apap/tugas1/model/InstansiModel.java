@@ -43,4 +43,36 @@ public class InstansiModel implements Serializable{
 	@Size(max=20)
 	@Column(name="id_provinsi", nullable=false)
     public Integer id_provinsi;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNama() {
+		return nama;
+	}
+
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+
+	public String getDeskripsi() {
+		return deskripsi;
+	}
+
+	public void setDeskripsi(String deskripsi) {
+		this.deskripsi = deskripsi;
+	}
+
+	public Integer getId_provinsi() {
+		return id_provinsi;
+	}
+
+	public void setId_provinsi(Integer id_provinsi) {
+		this.id_provinsi = id_provinsi;
+	}
 }

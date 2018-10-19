@@ -16,9 +16,9 @@ public class JabatanServiceImpl implements JabatanService{
 	JabatanDb jabatanDb;
 	
 	@Override
-	public List<JabatanModel> getJabatan() {
+	public List<JabatanModel> getAllJabatan() {
 		// TODO Auto-generated method stub
-		return jabatanDb.findAll();
+		return jabatanDb.getAllByIdIsNotNull();
 	}
 	
 }
