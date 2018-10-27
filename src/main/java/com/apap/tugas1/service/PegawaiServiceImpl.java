@@ -72,6 +72,7 @@ public class PegawaiServiceImpl implements PegawaiService {
 		pegawai.setNip(nipbeneran);
 		
 	}
+
 	
 	
 

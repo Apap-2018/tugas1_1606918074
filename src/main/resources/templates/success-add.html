@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Home</title>
+		<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+		<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+	</head>
+	<body>
+		<nav th:replace="fragments/fragment :: navbar">
+		</nav>
+		<div th:replace="fragments/fragment :: header"> 
+		</div>
+		<br><br><br><br>
+		
+		<h1>Data Berhasil Ditambah</h1>
+</body>
+</html>

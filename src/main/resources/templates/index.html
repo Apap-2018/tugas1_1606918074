@@ -10,7 +10,7 @@
 		</nav>
 		<div th:replace="fragments/fragment :: header"> 
 		</div>
-		<h3>Tambah Pegawai</h3>
+		<br>
 
 	<form th:action="@{/pegawai}" th:object="${Pegawai}" method="GET">
     	<h4>Lihat Data Pegawai berdasarkan NIP</h4>
@@ -21,8 +21,8 @@
 	<br><br>
 	<h4>Lihat Detail Jabatan</h4>
     <p>Pilih Jabatan :</p>
-    <form th:action="@{/jabatan/view}" th:object="${jabatan}" method="GET">
-		<select >
+    <form th:action="@{/jabatan/viewJabatan}" th:object="${jabatan}" method="GET">
+		<select>
 			<option th:each="jabatan:${allJabatan}" th:value="${jabatan.id}" th:text="${jabatan.nama}"></option>	
     	</select>
     	<button type="submit">Submit</button>

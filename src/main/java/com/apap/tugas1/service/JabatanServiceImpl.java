@@ -20,5 +20,17 @@ public class JabatanServiceImpl implements JabatanService{
 		// TODO Auto-generated method stub
 		return jabatanDb.getAllByIdIsNotNull();
 	}
+
+	@Override
+	public JabatanModel getJabatanDetailById(Long id) {
+		// TODO Auto-generated method stub
+		return jabatanDb.findJabatanModelById(id);
+	}
+
+	@Override
+	public void addJabatan(JabatanModel jabatan) {
+		// TODO Auto-generated method stub
+		jabatanDb.save(jabatan);
+	}
 	
 }

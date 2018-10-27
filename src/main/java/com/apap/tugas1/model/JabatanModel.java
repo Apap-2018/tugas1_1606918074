@@ -25,10 +25,6 @@ public class JabatanModel implements Serializable{
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	public String getNama() {
 		return nama;
 	}
@@ -55,8 +51,8 @@ public class JabatanModel implements Serializable{
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Size(max=20)
-	@Column(name="id", nullable=false)
+//	@Size(max=20)
+//	@Column(name="id", nullable=false)
     private Long id;
 	
 	@NotBlank
