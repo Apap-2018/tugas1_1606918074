@@ -79,7 +79,7 @@ public class JabatanPegawaiModel implements Serializable{
 	public void setId_jabatan(Long id_jabatan) {
 		this.id_jabatan = id_jabatan;
 	}
-	//	@ManyToOne(fetch = FetchType.LAZY)
+//	@ManyToOne(fetch = FetchType.LAZY)
 //	@JoinColumn(name="id_pegawai")
 //	private PegawaiModel pegawai;
 //
