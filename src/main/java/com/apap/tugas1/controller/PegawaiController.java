@@ -148,4 +148,9 @@ public class PegawaiController {
 		pegawaiService.addPegawai(pegawai);
 		return "update";
 	}
+	
+	@RequestMapping("/not-found")
+	private String notFound() {
+		return "page-not-found";
+	}
 }
