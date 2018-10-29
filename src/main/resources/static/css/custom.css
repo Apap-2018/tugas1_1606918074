@@ -1,0 +1,20 @@
+h1{
+	font-family: 'Noto Serif', serif;
+	color: #003152;
+}
+h2{
+	font-family: 'Baloo Bhaijaan', cursive;
+}
+h3{
+	font-family: 'Lato', sans-serif;
+}
+h4{
+	font-family: 'Lato', sans-serif;
+}
+p{
+	font-family: 'Lato', sans-serif;
+}
+.nav{
+	background-color: #7285a5;
+	font-color: "white";
+}

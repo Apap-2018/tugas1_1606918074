@@ -28,13 +28,13 @@ public class JabatanController {
 	@RequestMapping(value="/jabatan/viewall", method=RequestMethod.GET)
 	public String view(Model model) {
 		List<JabatanModel> jabatan = jabatanService.getAllJabatan();
-		
+//		for ()
 		model.addAttribute("allJabatan", jabatan);
 		return "view-all-jabatan";
 	}
 	
 	@RequestMapping(value="/jabatan/viewJabatan", method=RequestMethod.GET)
-	public String viewJabatan(@RequestParam("id") Long id, Model model) {
+	public String viewJabatan(@RequestParam Long id, Model model) {
 		JabatanModel jabatan = jabatanService.getJabatanDetailById(id);
 		model.addAttribute("jabatan", jabatan);
 		return "view-jabatan";
@@ -51,6 +51,12 @@ public class JabatanController {
 	private String addJabatanSubmit(@ModelAttribute JabatanModel jabatan, Model model) {
 		jabatanService.addJabatan(jabatan);
 		return "success-add";
+	}
+	
+	@RequestMapping(value="/jabatan/hapus", method=RequestMethod.POST)
+	public String delete(@ModelAttribute JabatanModel jabatan, Model model) {
+		jabatanService.deleteJabatan(jabatan);
+		return "view-all-jabatan";
 	}
 	
 }

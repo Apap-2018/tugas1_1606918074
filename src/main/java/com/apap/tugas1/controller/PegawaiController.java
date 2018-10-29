@@ -130,4 +130,22 @@ public class PegawaiController {
 		model.addAttribute("nipbaru", nippegawaibaru);
 		return "success-add";
 	}
+	
+	@RequestMapping(value="/pegawai/ubah", method=RequestMethod.GET)
+	public String update(@RequestParam("nip") String nip, Model model) {
+		PegawaiModel pegawai = pegawaiService.getPegawaiDetailByNip(nip);
+		
+		if(pegawai != null) {
+			model.addAttribute("pegawai", pegawai);
+			return "update-pegawai";
+		} else {
+			return "not-found";
+		}
+	}
+	
+	@RequestMapping(value="/pegawai/ubah", method=RequestMethod.POST)
+	private String updatePegawaiSubmit(@ModelAttribute PegawaiModel pegawai) {
+		pegawaiService.addPegawai(pegawai);
+		return "update";
+	}
 }
